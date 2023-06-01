@@ -281,10 +281,15 @@ export const Ingredients = styled.div`
     }
   }
 
-  @media screen and (max-width: 768px) {
-    border: none;
+  @media screen and (max-width: 1080px) {
+    margin-top: 16px;
+  }
 
+  @media screen and (max-width: 768px) {
     width: 410px;
+
+    border: none;
+    margin-top: 0px;
 
     display: flex;
     flex-direction: column;
