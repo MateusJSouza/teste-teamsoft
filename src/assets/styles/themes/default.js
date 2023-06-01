@@ -9,6 +9,7 @@ export default {
     yellow: {
       primary: '#F09035',
       light: 'rgba(253, 215, 14, 0.2);',
+      dark: '#FEBC10',
     },
     red: {
       primary: '#ED3237',
