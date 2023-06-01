@@ -5,7 +5,11 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-around;
 
-  margin-top: 24px;
+  padding: 24px 66px;
+
+  @media screen and (max-width: 1080px) {
+    flex-direction: column;
+  }
 `
 
 export const ProductDetails = styled.div`
@@ -17,14 +21,14 @@ export const ProductDetails = styled.div`
     margin-top: 10px;
 
     width: 528px;
-    height: 92px;
+    height: 34px;
 
-    font-size: 20px;
+    font-size: 28px;
     font-weight: 500;
   }
 
   span {
-    margin-top: 10px;
+    margin-top: 54px;
 
     width: 598px;
     height: 66px;
@@ -47,12 +51,72 @@ export const ProductDetails = styled.div`
       font-weight: 400;
     }
   }
+
+  @media screen and (max-width: 1080px) {
+    img {
+      width: 520px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 70%;
+    }
+
+    p {
+      font-size: 24px;
+    }
+
+    span {
+      font-size: 18px;
+    }
+
+    .price {
+      h1,
+      s {
+        font-size: 28px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    img {
+      width: 420px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
+    p {
+      width: 344px;
+      height: 38px;
+      font-size: 18px;
+      margin-top: 16px;
+    }
+
+    span {
+      margin-top: 0;
+
+      width: 344px;
+      height: 78px;
+      font-size: 16px;
+    }
+
+    .price {
+      h1,
+      s {
+        font-size: 14px;
+      }
+    }
+  }
 `
 
 export const Ingredients = styled.div`
-  width: 439px;
+  width: 440px;
+  min-width: 375px;
   height: 662px;
-  max-width: 100%;
+
+  display: flex;
+  flex-direction: column;
 
   padding: 32px;
 
@@ -137,7 +201,7 @@ export const Ingredients = styled.div`
 
   .option {
     background: ${({ theme }) => theme.colors.yellow.light};
-    padding: 8px 16px 24px 16px;
+    padding: 8px 14px 24px 14px;
 
     p {
       font-size: 14px;
@@ -175,7 +239,7 @@ export const Ingredients = styled.div`
   }
 
   .total {
-    margin-top: 48px;
+    margin-top: auto;
 
     display: flex;
     align-items: center;
@@ -187,15 +251,12 @@ export const Ingredients = styled.div`
       justify-content: space-around;
 
       padding: 8px;
-      margin: 8px 0 8px 0;
 
       width: 140px;
       height: 40px;
 
       border: 1px solid ${({ theme }) => theme.colors.yellow.primary};
       border-radius: 5px;
-
-      margin-bottom: 4px;
 
       button {
         display: flex;
@@ -217,6 +278,24 @@ export const Ingredients = styled.div`
 
       font-size: 14px;
       font-weight: 500;
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    margin-top: 16px;
+  }
+
+  @media screen and (max-width: 768px) {
+    border: none;
+
+    width: 410px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .accompaniments {
+      width: 346px;
     }
   }
 `
