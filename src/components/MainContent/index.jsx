@@ -1,10 +1,12 @@
-import { Container, Ingredients, ProductDetails } from './styles'
+import { useEffect, useState } from 'react'
 
+import { api } from '../../services/api'
+
+import hamburguer from '../../assets/images/hamburguer.png'
 import subtractIcon from '../../assets/icons/subtract.svg'
 import addIcon from '../../assets/icons/add.svg'
-import hamburguer from '../../assets/images/hamburguer.png'
-import { useEffect, useState } from 'react'
-import { api } from '../../services/api'
+
+import { Container, Ingredients, ProductDetails } from './styles'
 
 export function MainContent() {
   const [data, setData] = useState([])

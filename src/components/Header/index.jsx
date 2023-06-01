@@ -1,8 +1,8 @@
-import avatarIcon from '../../assets/icons/avatar.svg'
-import cartIcon from '../../assets/icons/cart.svg'
 import arrowDownIcon from '../../assets/icons/arrow-down.svg'
 import arrowLeftIcon from '../../assets/icons/arrow-left.svg'
 import deliverize from '../../assets/images/deliverize.png'
+import avatarIcon from '../../assets/icons/avatar.svg'
+import cartIcon from '../../assets/icons/cart.svg'
 
 import { Actions, ActionsDetails, Container, Input } from './styles'
 
