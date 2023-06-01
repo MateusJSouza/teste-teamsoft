@@ -11,11 +11,32 @@ export const Container = styled.header`
   align-items: center;
 
   padding: 16px 40px;
+
+  position: relative;
+
+  .header-mobile {
+    display: flex;
+    justify-content: center;
+  }
+
+  .arrow-left {
+    position: absolute;
+    top: 36px;
+    left: 20px;
+  }
+
+  @media screen and (max-width: 1120px) {
+    justify-content: space-around;
+  }
 `
 
 export const Actions = styled.div`
   display: flex;
   gap: 24px;
+
+  @media screen and (max-width: 1120px) {
+    display: none;
+  }
 
   .delivery {
     width: 230px;

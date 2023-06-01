@@ -1,6 +1,7 @@
 import avatarIcon from '../../assets/icons/avatar.svg'
 import cartIcon from '../../assets/icons/cart.svg'
-import arrowDown from '../../assets/icons/arrow-down.svg'
+import arrowDownIcon from '../../assets/icons/arrow-down.svg'
+import arrowLeftIcon from '../../assets/icons/arrow-left.svg'
 import deliverize from '../../assets/images/deliverize.png'
 
 import { Actions, ActionsDetails, Container, Input } from './styles'
@@ -8,12 +9,14 @@ import { Actions, ActionsDetails, Container, Input } from './styles'
 export function Header() {
   return (
     <Container>
-      <div>
+      <div className="header-mobile">
         <img
           src={deliverize}
           alt="Logo da Deliverize: uma ilustração de um pacote de entrega com pernas correndo e ao lado o nome 'Deliverize' em vermelho. Logo abaixo, o slogan da marca escrito 'precisou, comprou, chegou'"
         />
       </div>
+
+      <img className="arrow-left" src={arrowLeftIcon} alt="" />
 
       <Actions>
         <div className="delivery">
@@ -23,7 +26,7 @@ export function Header() {
             <span>R. Antonio Braune, 222</span>
           </div>
 
-          <img src={arrowDown} alt="" />
+          <img src={arrowDownIcon} alt="" />
         </div>
 
         <Input placeholder="Busque por estabelecimento ou produtos" />
