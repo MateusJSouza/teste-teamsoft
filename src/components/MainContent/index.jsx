@@ -42,30 +42,39 @@ export function MainContent() {
           <span>Até 8 ingredientes.</span>
         </div>
 
-        <div className="accompaniments">
-          <div className="left-box">
-            <p>Queijo cheddar</p>
-            <span>+ R$4,99</span>
-          </div>
+        {data[0]?.ingredients?.map((group) => {
+          if (group.group === 'Ingredientes Extras') {
+            return group.itens.map((item) => (
+              <>
+                <div className="accompaniments" key={item.id}>
+                  <div className="left-box">
+                    <p>{item.nm_item}</p>
+                    <span>+ R${item.vl_item.toFixed(2)}</span>
+                  </div>
 
-          <div className="right-box">
-            <button type="button">
-              <img src={subtractIcon} alt="" />
-            </button>
-            <p>2</p>
-            <button type="button">
-              <img src={addIcon} alt="" />
-            </button>
-          </div>
-        </div>
+                  <div className="right-box">
+                    <button type="button">
+                      <img src={subtractIcon} alt="" />
+                    </button>
+                    <p>2</p>
+                    <button type="button">
+                      <img src={addIcon} alt="" />
+                    </button>
+                  </div>
+                </div>
 
-        <div
-          className="divider"
-          style={{
-            border: '1px solid #e8a634',
-            margin: '8px 0',
-          }}
-        />
+                <div
+                  className="divider"
+                  style={{
+                    border: '1px solid #e8a634',
+                    margin: '8px 0',
+                  }}
+                />
+              </>
+            ))
+          }
+          return null
+        })}
 
         <div className="option">
           <p>Precisa de talher?</p>

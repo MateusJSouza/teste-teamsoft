@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   padding: 24px 66px;
 
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 1180px) {
     flex-direction: column;
   }
 `
@@ -214,27 +214,11 @@ export const Ingredients = styled.div`
     flex-direction: column;
 
     .yes {
-      margin-top: 8px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      input[type='radio'] {
-        border: 1px solid ${({ theme }) => theme.colors.yellow.dark};
-      }
+      display: none;
     }
 
     .no {
-      margin-top: 8px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      input[type='radio'] {
-        border: 1px solid ${({ theme }) => theme.colors.yellow.dark};
-      }
+      display: none;
     }
   }
 
@@ -281,7 +265,7 @@ export const Ingredients = styled.div`
     }
   }
 
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 1180px) {
     margin-top: 16px;
   }
 
