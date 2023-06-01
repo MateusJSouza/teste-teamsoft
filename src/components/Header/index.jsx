@@ -39,6 +39,10 @@ export function Header() {
         <ActionsDetails>
           <img src={cartIcon} alt="" />
           <a href="/">Carrinho</a>
+
+          <div className="items-in-cart">
+            <p>1</p>
+          </div>
         </ActionsDetails>
       </Actions>
     </Container>

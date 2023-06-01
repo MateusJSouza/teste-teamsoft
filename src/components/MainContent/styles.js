@@ -266,14 +266,29 @@ export const Ingredients = styled.div`
   }
 
   @media screen and (max-width: 1180px) {
-    margin-top: 16px;
+    border: none;
+
+    .choice {
+      .yes,
+      .no {
+        font-size: 14px;
+        margin-top: 8px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .total {
+      margin-top: 8px;
+    }
   }
 
   @media screen and (max-width: 768px) {
     width: 410px;
 
-    border: none;
-    margin-top: 0px;
+    margin-top: 32px;
 
     display: flex;
     flex-direction: column;

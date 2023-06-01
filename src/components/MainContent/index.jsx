@@ -8,6 +8,29 @@ import { api } from '../../services/api'
 
 export function MainContent() {
   const [data, setData] = useState([])
+  const [quantities, setQuantities] = useState(0)
+
+  function handleIncrease(itemId) {
+    setQuantities((prevQuantities) => {
+      const updatedQuantities = { ...prevQuantities }
+      if (updatedQuantities[itemId] === undefined) {
+        updatedQuantities[itemId] = 1
+      } else {
+        updatedQuantities[itemId] += 1
+      }
+      return updatedQuantities
+    })
+  }
+
+  function handleDecrease(itemId) {
+    setQuantities((prevQuantities) => {
+      const updatedQuantities = { ...prevQuantities }
+      if (updatedQuantities[itemId] > 0) {
+        updatedQuantities[itemId] -= 1
+      }
+      return updatedQuantities
+    })
+  }
 
   useEffect(() => {
     api
@@ -25,7 +48,7 @@ export function MainContent() {
         <ProductDetails key={item.id}>
           <img src={hamburguer} alt="" />
 
-          <p key={item.id}>{item.nm_product}</p>
+          <p>{item.nm_product}</p>
 
           <span>{item.description}</span>
 
@@ -53,11 +76,17 @@ export function MainContent() {
                   </div>
 
                   <div className="right-box">
-                    <button type="button">
+                    <button
+                      onClick={() => handleDecrease(item.id)}
+                      type="button"
+                    >
                       <img src={subtractIcon} alt="" />
                     </button>
-                    <p>2</p>
-                    <button type="button">
+                    <p>{quantities[item.id] || 0}</p>
+                    <button
+                      onClick={() => handleIncrease(item.id)}
+                      type="button"
+                    >
                       <img src={addIcon} alt="" />
                     </button>
                   </div>
@@ -97,7 +126,7 @@ export function MainContent() {
             <button type="button">
               <img src={subtractIcon} alt="" />
             </button>
-            <p>2</p>
+            <p>1</p>
             <button type="button">
               <img src={addIcon} alt="" />
             </button>

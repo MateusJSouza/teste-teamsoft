@@ -95,6 +95,8 @@ export const ActionsDetails = styled.div`
   align-items: center;
   gap: 10px;
 
+  position: relative;
+
   img {
     width: 26px;
     height: 26px;
@@ -103,5 +105,26 @@ export const ActionsDetails = styled.div`
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.colors.red.primary};
+  }
+
+  .items-in-cart {
+    position: absolute;
+
+    width: 16px;
+    height: 16px;
+    background: ${({ theme }) => theme.colors.yellow.primary};
+
+    border-radius: 50%;
+    top: 2px;
+    left: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-size: 10px;
+      color: white;
+    }
   }
 `
