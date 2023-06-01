@@ -25,6 +25,12 @@ export const Container = styled.header`
     left: 20px;
   }
 
+  @media screen and (min-width: 1120px) {
+    .arrow-left {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 1120px) {
     justify-content: space-around;
   }

@@ -281,10 +281,6 @@ export const Ingredients = styled.div`
     }
   }
 
-  @media screen and (max-width: 1080px) {
-    margin-top: 16px;
-  }
-
   @media screen and (max-width: 768px) {
     border: none;
 

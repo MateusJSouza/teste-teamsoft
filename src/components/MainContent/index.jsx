@@ -67,31 +67,6 @@ export function MainContent() {
           }}
         />
 
-        <div className="accompaniments">
-          <div className="left-box">
-            <p>Queijo cheddar</p>
-            <span>+ R$4,99</span>
-          </div>
-
-          <div className="right-box">
-            <button type="button">
-              <img src={subtractIcon} alt="" />
-            </button>
-            <p>2</p>
-            <button type="button">
-              <img src={addIcon} alt="" />
-            </button>
-          </div>
-        </div>
-
-        <div
-          className="divider"
-          style={{
-            border: '1px solid #e8a634',
-            margin: '8px 0',
-          }}
-        />
-
         <div className="option">
           <p>Precisa de talher?</p>
         </div>
