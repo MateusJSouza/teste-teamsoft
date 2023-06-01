@@ -3,25 +3,38 @@ import { Container, Ingredients, ProductDetails } from './styles'
 import subtractIcon from '../../assets/icons/subtract.svg'
 import addIcon from '../../assets/icons/add.svg'
 import hamburguer from '../../assets/images/hamburguer.png'
+import { useEffect, useState } from 'react'
+import { api } from '../../services/api'
 
 export function MainContent() {
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    api
+      .get('/products')
+      .then((response) => {
+        console.log(response.data)
+        setData(response.data)
+      })
+      .catch((error) => console.log(error))
+  }, [])
+
   return (
     <Container>
-      <ProductDetails>
-        <img src={hamburguer} alt="" />
+      {data.map((item) => (
+        <ProductDetails key={item.id}>
+          <img src={hamburguer} alt="" />
 
-        <p>Oferta Picanha Cheddar Bacon</p>
+          <p key={item.id}>{item.nm_product}</p>
 
-        <span>
-          Hambúrguer de picanha, molho de picanha, cebola crispy, bacon, queijo
-          cheddar, molho cheddar e pão mix de gergelim
-        </span>
+          <span>{item.description}</span>
 
-        <div className="price">
-          <h1>R$31,99</h1>
-          <s>R$34,95</s>
-        </div>
-      </ProductDetails>
+          <div className="price">
+            <h1>R${item.vl_discount}</h1>
+            <s>R${item.vl_price}</s>
+          </div>
+        </ProductDetails>
+      ))}
 
       <Ingredients>
         <div className="add-ingredients">
