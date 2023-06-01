@@ -6,6 +6,7 @@ import GlobalStyles from '../../assets/styles/global'
 import defaultTheme from '../../assets/styles/themes/default'
 
 import { Container } from './styles'
+import { MainContent } from '../MainContent'
 
 export function App() {
   return (
@@ -13,6 +14,7 @@ export function App() {
       <GlobalStyles />
       <Container>
         <Header />
+        <MainContent />
       </Container>
     </ThemeProvider>
   )
