@@ -45,7 +45,6 @@ export function MainContent() {
     api
       .get('/products')
       .then((response) => {
-        console.log(response.data)
         setData(response.data)
       })
       .catch((error) => console.log(error))
