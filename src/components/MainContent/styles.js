@@ -1,11 +1,15 @@
 import styled from 'styled-components'
 
+import * as Popover from '@radix-ui/react-popover'
+
 export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
 
   padding: 24px 66px;
+
+  position: relative;
 
   @media screen and (max-width: 1180px) {
     flex-direction: column;
@@ -242,6 +246,8 @@ export const Ingredients = styled.div`
       border: 1px solid ${({ theme }) => theme.colors.yellow.primary};
       border-radius: 5px;
 
+      position: relative;
+
       button {
         display: flex;
         align-items: center;
@@ -294,8 +300,66 @@ export const Ingredients = styled.div`
     flex-direction: column;
     justify-content: center;
 
+    .total {
+      .add-to-cart {
+        width: 195px;
+      }
+    }
+
     .accompaniments {
       width: 346px;
     }
+  }
+`
+
+export const PopoverContent = styled(Popover.Content)`
+  background: #f8f8f8;
+
+  header {
+    padding: 8px 8px 4px 8px;
+    background: #f09035;
+    border-radius: 4px 4px 0px 0px;
+
+    strong {
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+    }
+  }
+
+  .badges {
+    padding: 8px 10px;
+
+    p {
+      font-size: 14px;
+      font-weight: 700;
+      color: #bc2e31;
+    }
+
+    .ingredients {
+      p {
+        margin-top: 8px;
+        font-size: 12px;
+        font-weight: normal;
+        color: ${({ theme }) => theme.colors.gray.dark};
+      }
+
+      ul {
+        margin-top: 8px;
+
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+
+        li {
+          font-size: 12px;
+          margin-left: 26px;
+        }
+      }
+    }
+  }
+
+  .popover-arrow {
+    fill: ${({ theme }) => theme.colors.yellow.primary};
   }
 `

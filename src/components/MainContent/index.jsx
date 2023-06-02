@@ -1,12 +1,19 @@
 import { useEffect, useState } from 'react'
 
+import * as Popover from '@radix-ui/react-popover'
+
 import { api } from '../../services/api'
 
 import hamburguer from '../../assets/images/hamburguer.png'
 import subtractIcon from '../../assets/icons/subtract.svg'
 import addIcon from '../../assets/icons/add.svg'
 
-import { Container, Ingredients, ProductDetails } from './styles'
+import {
+  Container,
+  Ingredients,
+  PopoverContent,
+  ProductDetails,
+} from './styles'
 
 export function MainContent() {
   const [data, setData] = useState([])
@@ -134,9 +141,31 @@ export function MainContent() {
             </button>
           </div>
 
-          <button className="add-to-cart" type="submit">
-            Adicionar
-          </button>
+          <Popover.Root>
+            <Popover.Trigger className="add-to-cart">Adicionar</Popover.Trigger>
+            <Popover.Portal>
+              <PopoverContent side="bottom" align="center">
+                <header>
+                  <strong>Adicionado com sucesso</strong>
+                </header>
+
+                <div className="badges">
+                  <p>Oferta Cheddar Bacon</p>
+
+                  <div className="ingredients">
+                    <p>Ingredientes</p>
+                    <ul>
+                      <li>1 Carne 250gr</li>
+                      <li>2 Queijo Cheddar</li>
+                      <li>1 Bacon</li>
+                      <li>Molho Especial</li>
+                    </ul>
+                  </div>
+                </div>
+                <Popover.Arrow className="popover-arrow" />
+              </PopoverContent>
+            </Popover.Portal>
+          </Popover.Root>
         </div>
       </Ingredients>
     </Container>
