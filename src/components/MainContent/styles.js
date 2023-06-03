@@ -144,6 +144,12 @@ export const Ingredients = styled.div`
     }
   }
 
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .accompaniments {
     width: 360px;
     height: 88px;

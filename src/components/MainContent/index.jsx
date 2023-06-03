@@ -76,8 +76,8 @@ export function MainContent() {
         {data[0]?.ingredients?.map((group) => {
           if (group.group === 'Ingredientes Extras') {
             return group.itens.map((item) => (
-              <>
-                <div className="accompaniments" key={item.id}>
+              <div className="container" key={item.id}>
+                <div className="accompaniments">
                   <div className="left-box">
                     <p>{item.nm_item}</p>
                     <span>+ R${item.vl_item.toFixed(2)}</span>
@@ -101,13 +101,13 @@ export function MainContent() {
                 </div>
 
                 <div
-                  className="divider"
                   style={{
                     border: '1px solid #e8a634',
                     margin: '8px 0',
+                    width: '344px',
                   }}
                 />
-              </>
+              </div>
             ))
           }
           return null
